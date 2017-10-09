@@ -37,7 +37,8 @@
   "build": {
     "appId": "com.electron.electron-with-create-react-app",
     "win": {
-      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+      "iconUrl":
+        "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
     },
     "directories": {
       "buildResources": "public"

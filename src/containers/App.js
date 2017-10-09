@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Button from 'material-ui/Button';
-import Dashboard from '../containers/Dashboard';
+import Button from "material-ui/Button";
+import Dashboard from "../containers/Dashboard";
 
 class App extends Component {
   render() {
@@ -9,9 +9,7 @@ class App extends Component {
       <div className="App">
         <Dashboard />
 
-        <Button>
-          Hello World
-        </Button>
+        <Button>Hello World</Button>
       </div>
     );
   }
