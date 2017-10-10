@@ -1,18 +1,56 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as Actions from "../actions";
 
-import Button from "material-ui/Button";
-import Dashboard from "../containers/Dashboard";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+import { withStyles } from "material-ui/styles";
+
+import Dashboard from "./Dashboard";
+import Login from "./Login";
+import Signup from "./SignUp";
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <Dashboard />
+    const { classes } = this.props;
+    return <div className="App">
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">login</Link></li>
+            <li><Link to="/signup">signup</Link></li>
+            <li><Link to="/dashboard">dashboard</Link></li>
+          </ul>
 
-        <Button>Hello World</Button>
-      </div>
-    );
+          <hr/>
+
+          <Route exact path="/" component={Dashboard}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/signup" component={Signup}/>
+          <Route path="/dashboard" component={Dashboard}/>
+        </div>
+      </Router>
+
+    </div>;
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {};
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+// export default withStyles(styles)(App);
