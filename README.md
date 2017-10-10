@@ -9,3 +9,9 @@ yarn react-start
 //for electron only:
 yarn electron-start
 ```
+
+## Libraries Used
+* React Router
+* Material UI v1
+* Redux
+* Firebase
