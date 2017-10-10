@@ -4,14 +4,16 @@ import "./index.css";
 import App from "./containers/App";
 import registerServiceWorker from "./registerServiceWorker";
 
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
+import reducers from "./reducers";
+
+import createHistory from "history/createBrowserHistory";
+import { Route } from "react-router";
+import { ConnectedRouter, routerMiddleware, push } from "react-router-redux";
 
 import firebase from "firebase";
-
-import reducers from "./reducers";
 
 var config = {
   apiKey: "AIzaSyDBODwiyli_Rn3WcEBWRc8TMXTEAqatgHQ",
@@ -24,14 +26,28 @@ var config = {
 
 firebase.initializeApp(config);
 
-const store = createStore(
-  reducers,
-  composeWithDevTools(applyMiddleware(ReduxThunk))
-);
+const history = createHistory();
+const reduxRouterMiddleware = routerMiddleware(history);
 
+const composeEnhancers =
+  typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      })
+    : compose;
+
+const enhancer = composeEnhancers(applyMiddleware(ReduxThunk));
+
+const store = createStore(reducers, enhancer);
+
+// <App />
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <div>
+        <Route exact path="/" component={App} />
+      </div>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );

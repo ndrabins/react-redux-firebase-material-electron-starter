@@ -1,16 +1,18 @@
 {
-  "name": "new_app",
-  "description": "cool stuff",
+  "name": "coludo",
+  "description": "Git ",
   "author": "me",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "firebase": "^4.5.0",
+    "history": "^4.7.2",
     "material-ui": "^1.0.0-beta.13",
     "material-ui-icons": "^1.0.0-beta.15",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
@@ -37,8 +39,7 @@
   "build": {
     "appId": "com.electron.electron-with-create-react-app",
     "win": {
-      "iconUrl":
-        "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
     },
     "directories": {
       "buildResources": "public"
