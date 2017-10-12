@@ -13,7 +13,7 @@ import createHistory from "history/createBrowserHistory";
 
 import firebase from "firebase";
 
-import Dashboard from './containers/Dashboard';
+import Dashboard from "./containers/Dashboard";
 
 var config = {
   apiKey: "",
@@ -42,7 +42,7 @@ const store = createStore(reducers, enhancer);
 // <App />
 ReactDOM.render(
   <Provider store={store}>
-      <App />
+    <App />
   </Provider>,
   document.getElementById("root")
 );
