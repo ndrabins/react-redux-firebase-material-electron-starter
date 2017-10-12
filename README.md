@@ -1,14 +1,15 @@
 # Installation
 ```
-//yarn can be replaces with npm 
+/* yarn can be replaced with npm */
 
 yarn global add foreman # for process management with electron  
 yarn install
 yarn start
-
-//for React only:
+```
+```
+/* for React only: */
 yarn react-start
-//for electron only:
+/* for Electron only: */
 yarn electron-start
 ```
 ## Purpose
