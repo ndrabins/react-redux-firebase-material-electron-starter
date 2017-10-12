@@ -10,20 +10,18 @@ import ReduxThunk from "redux-thunk";
 import reducers from "./reducers";
 
 import createHistory from "history/createBrowserHistory";
-// import { Route } from "react-router";
-// import { ConnectedRouter, routerMiddleware, push } from "react-router-redux";
 
 import firebase from "firebase";
 
 import Dashboard from './containers/Dashboard';
 
 var config = {
-  apiKey: "AIzaSyDBODwiyli_Rn3WcEBWRc8TMXTEAqatgHQ",
-  authDomain: "newapp-6c93a.firebaseapp.com",
-  databaseURL: "https://newapp-6c93a.firebaseio.com",
-  projectId: "newapp-6c93a",
-  storageBucket: "newapp-6c93a.appspot.com",
-  messagingSenderId: "253006161914"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 };
 
 firebase.initializeApp(config);
