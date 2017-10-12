@@ -1,6 +1,6 @@
 {
-  "name": "coludo",
-  "description": "Git ",
+  "name": "react-redux-firebase-material-router-electron-starter",
+  "description": "React, redux, firebase, material, react router, electron simple starter ",
   "author": "me",
   "version": "0.1.0",
   "private": true,
