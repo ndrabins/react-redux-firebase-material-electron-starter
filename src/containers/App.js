@@ -42,16 +42,12 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {};
-}
-
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(Actions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
 
 // export default withStyles(styles)(App);
